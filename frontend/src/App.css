@@ -1,56 +1,444 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-family: "Ubuntu", sans-serif;
+}
+/* .App {
+  background-image: url("./assets/bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+} */
+
+/*DEKSTOP*/
+
+/*NAVBAR*/
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: #b7e174; */
+}
+.logo {
+  font-size: 25px;
+  padding-left: 2rem;
+  font-weight: bold;
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+  cursor: pointer;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.nav-list {
+  background: none;
+  border: none;
+  cursor: pointer;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 16px;
+  gap: 0.5rem; */
+}
+.nav-list img {
+  width: 50px;
+}
+.nav-links .nav-list:hover {
+  text-transform: capitalize;
+  transition: all 0.3s ease;
+  color: #002743;
 }
 
-.App {
-  text-align: center;
+.home,
+.add,
+.listProduct {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.mobile-menu-icon {
+  display: none;
 }
+/* .nav-links .avatar {
+  width: 50px;
+} */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media screen and (max-width: 600px) {
+  /*NAVBAR RESPONSIVE*/
+  /* .Logo {
+    display: flex;
+    position: absolute;
+    top: 15px;
+    left: 35px;
+  } */
+  /* .nav-links {
+    display: none;
+  } */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #f0f0f0;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+  }
+  .nav-links-mobile {
+    position: absolute;
+    display: block;
+    list-style: none;
+    background-color: #77b3df;
+    left: 0;
+    top: 60px;
+    transition: all 0.5s ease-out;
+    width: 100%;
+    height: auto;
+  }
+  .home,
+  .add,
+  .listProduct {
+    color: white;
+    text-align: center;
+    padding: 32px;
+    width: 100%;
+    transition: all 0.5s ease-out;
+  }
+  .mobile-menu-icon {
+    display: block;
+    position: absolute;
+    font-size: 30px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    top: 15px;
+    right: 25px;
+  }
+  .navbar {
+    z-index: 99;
   }
 }
+/*CARROUSEL*/
+h5,
+.content-carousel {
+  color: black;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.text-center p-4 {
+  background-color: rgba(0, 0, 0, 0.025);
+}
+.book-cover {
+  width: 200px;
+}
+.slide {
+  min-height: 100px;
+}
+.carousel-caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/*BestSeller*/
+.best-book {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+.best-title {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+.book-list-top {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  padding: 2rem;
+}
+.best-book-img {
+  text-align: center;
+}
+.best-book-img .best {
+  width: 10rem;
+  height: 250px;
+}
+.caption-book {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 8px 0;
+}
+.best-price {
+  font-size: 16px;
+  margin: 8px 0;
+}
+
+/* Book List */
+.book-list {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+  padding: 0.5em;
+}
+.sell-title {
+  padding-top: 1em;
+  font-size: 50px;
+}
+.book-sell {
+  gap: 1em;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(3, 2fr);
+  width: 80%;
+}
+.product-book {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 1rem;
+  width: 100%;
+}
+.product-image2 {
+  width: 10rem;
+}
+.product-content {
+  padding-top: 1rem;
+}
+.btn-book {
+  display: grid;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  grid-template-columns: repeat(2, 150px);
+  grid-template-rows: repeat(1, 50px);
+  /* grid-template-columns: repeat(2, 2fr);
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); */
+  width: 100%;
+  gap: 2rem;
+}
+.btn-list,
+.btn-list2,
+.btn-list3,
+.btn-list4 {
+  padding: 0.2em;
+  border: none;
+  cursor: pointer;
+  text-align: center;
   color: white;
+  text-decoration: none;
+}
+.btn-list {
+  background-color: #859e5d;
 }
 
-.App-link {
-  color: #61dafb;
+.btn-list2 {
+  background-color: pink;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-list3 {
+  background-color: blue;
 }
 
-button {
-  font-size: calc(10px + 2vmin);
+.btn-list4 {
+  background-color: rgb(255, 132, 0);
+}
+
+/*Shopping Cart */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00000055;
+  z-index: 10;
+}
+
+.shoppingCart {
+  width: 60%;
+  height: 90%;
+  margin: 2rem auto;
+  background-color: #eee;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.shoppingCart .header {
+  display: flex;
+  background-color: #859e5d;
+  padding: 10px 20px;
+  justify-content: space-between;
+}
+.close-btn {
+  color: black;
+}
+
+.empty-text {
+  display: block;
+  padding: 2rem;
+  margin: auto;
+}
+
+.cart-products {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem 0;
+  overflow-y: scroll;
+}
+.cart-product {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #fff;
+  padding: 10px 20px;
+  border: 3px solid #eee;
+}
+
+.product-info {
+  flex-basis: 50%;
+}
+
+.product-info h3 {
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.cart-product select {
+  width: 70px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.cart-products img {
+  width: 100px;
+  background-color: #fff;
+}
+
+.checkout-btn {
+  background-color: #859e5d;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  align-self: center;
+  margin: 2rem 0;
+}
+
+/* ADDBOOK */
+.form-container {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  overflow: hidden;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("./assets/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
+.form {
+  background-color: #b7de87;
+  width: 50%;
+  border-radius: 0.5em;
+}
+.add-title {
+  text-align: center;
+  padding: 1rem;
+}
+.form-add {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+  padding: 1rem;
+}
+.btn-add-produit {
+  display: grid;
+  justify-items: center;
+  gap: 2rem;
+  align-items: center;
+  padding: 1em;
+}
+.add-btn {
+  display: grid;
+  grid-template-columns: repeat(1, 100px);
+  grid-template-rows: repeat(1, 30px);
+  align-items: center;
+  background-color: #859e5d;
+  padding: 0.5em;
+  border: none;
+  border-radius: 1em;
+  cursor: pointer;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+}
+
+/*Footer*/
+.float-end {
+  float: right !important;
+}
+.social-media {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/*FOOTER*/
+.footer {
+  margin-top: 1rem;
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #b7e174;
+}
+
+.footer-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.footer span {
+  font-size: 16px;
+}
+
+/*Transaction*/
+.history {
+  padding: 2rem;
+  width: 50%;
+}
+.table {
+  border-spacing: 0;
+  overflow: hidden;
+  background-color: #b7e174;
+}
+.table1 {
+  color: black;
+}
+.table-row,
+.table-column {
+  padding: 10px;
+  border: 1px solid #090909;
+}
+.table1:nth-child(even) {
+  background-color: #f2f2f2;
 }

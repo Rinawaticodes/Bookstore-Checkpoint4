@@ -34,6 +34,16 @@ const ItemManager = require("./ItemManager");
 models.item = new ItemManager();
 models.item.setDatabase(pool);
 
+const BookManager = require("./BookManager");
+
+models.book = new BookManager();
+models.book.setDatabase(pool);
+
+const CartItemManager = require("./CartItemManager");
+
+models.panier = new CartItemManager();
+models.panier.setDatabase(pool);
+
 // bonus: use a proxy to personalize error message,
 // when asking for a non existing model
 
